@@ -17,37 +17,37 @@
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Health</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Women Empowerment</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Energy</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Local Retail</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Handicraft</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" />
+                      <input type="checkbox" name="category" value="" disabled="disabled" />
                       <span>Miscellaneous</span>
                     </label>
                 </p>
@@ -57,18 +57,24 @@
         <div class="col-lg-9 col-sm-8">
             <table class="responsive-table">
                 <tr>
-                    <td>
+                    <td *ngFor="let Idea of Ideas; let i=index">
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="..\..\..\assets\images\Capitolize.png">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
+                                <span class="card-title activator grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">more_vert</i></span>
+                                <p><a href="#">{{Idea.username}}</a></p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                <span class="card-title grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">close</i></span>
+                                <p>
+                                    {{Idea.summary}}<br> {{Idea.date_posted}}
+                                    <br> {{Idea.date_end}}
+                                    <br> {{Idea.num_contributors}}
+                                    <br> {{Idea.category}}
+                                    <br>
+                                </p>
                             </div>
                         </div>
                     </td>
@@ -91,53 +97,6 @@
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="..\..\..\assets\images\logo-4.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\logo-3.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\logo-1.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\logo-2.png">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
