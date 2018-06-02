@@ -6,6 +6,10 @@ div {
     padding: 0% 15%;
 }
 
+.card-content {
+    background-color: #2196F3;
+}
+
 form {
     padding: 3% 30%;
 }
