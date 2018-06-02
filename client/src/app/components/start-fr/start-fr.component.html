@@ -1,5 +1,6 @@
-<h4>Start a Fundraiser</h4>
-<div class="row">
+<div class ="container">
+  <h5>Start a Fundraiser</h5>
+  <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s4">
@@ -17,20 +18,83 @@
         <div class="input-field col s4">
           <i class="material-icons prefix">phone</i>
           <input id="icon_beneficiary" type="text" class="validate">
-          <label for="icon_beeneficiary">Beneficiary</label>
+          <label for="icon_beneficiary">Beneficiary</label>
         </div>
       </div>
       <div class ="row">
         <div class="file-field input-field col s4">
-          <div class="btn">
-            <span>Browse</span>
-            <input type="file" multiple>
-          </div>
+          <i class="material-icons prefix">add_a_photo</i>
+          <input type="file">
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="URL">
+            <input class="file-path validate">
           </div>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="input-field col s4">
+          <i class="material-icons prefix">money</i>
+          <input id="icon_money" type="number" class="validate">
+          <label for="icon_money">Amount to raised</label>
+        </div>
+        <div class="input-field col s4">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_your_contribution" type="number" class="validate">
+          <label for="icon_your_contribution">Your Contribution</label>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class="input-field col s4">
+          <i class="material-icons prefix">phone</i>
+          <label for="icon_your_contribution">Categories</label>
+          <br>
+          <div class= "row">
+            <div class = "col s4">
+              <label>
+                <input type="radio" name="group1">
+                <span>Farming</span>
+              </label>
+              
+              <label>
+                <input type="radio" name="group1"/>
+                <span>Teaching</span>
+              </label> 
+
+              <label>
+                <input type="radio" name="group1"/>
+                <span>Health</span>
+              </label>
+
+              <label>
+                <input type="radio" name="group1"/>
+                <span>Women Empowerment</span>
+              </label>
+
+              <label>
+                <input type="radio" name="group1"/>
+                <span>Handicraft</span>
+              </label>
+
+              <label>
+                <input type="radio" name="group1"/>
+                <span>Energy</span>
+              </label>
+
+              <label>
+                <input type="radio" name="group1" checked/>
+                <span>Local Retail</span>
+              </label>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+      <div class = "row">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
     </form>
   </div>
-   
+</div>

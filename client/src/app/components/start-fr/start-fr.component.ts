@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-fr.component.css']
 })
 export class StartFRComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
-  }
+}
 
 }
