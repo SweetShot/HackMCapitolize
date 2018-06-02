@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   login(username, password) {
     this.dataService.postLogin(username, password).subscribe((status) => {
       this.loginStatus = status;
-      console.log(status);
+      this.dataService.auth = '1 ' + status.token;
+      console.log(this.dataService.auth);
     });
   }
 }

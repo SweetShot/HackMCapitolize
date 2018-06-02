@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class DataService {
-
+  auth: string;
   constructor(public http: Http) { }
 
   getIdeas() {
