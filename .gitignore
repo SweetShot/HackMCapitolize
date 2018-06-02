@@ -2,3 +2,6 @@
 \.angulardoc\.json
 
 node_modules/
+/dummydata.json
+/main.exe
+/Procfile
