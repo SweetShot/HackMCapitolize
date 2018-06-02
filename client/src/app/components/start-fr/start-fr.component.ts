@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-fr.component.css']
 })
 export class StartFRComponent implements OnInit {
-  constructor() { }
+  constructor(private dataService: DataService ) { }
 
   ngOnInit() {
-}
-
+    if ((this.dataService.auth) !== '') {
+      console.log('Login Failed');
+    } else {
+      console.log('Logged in');
+    }
+  }
 }

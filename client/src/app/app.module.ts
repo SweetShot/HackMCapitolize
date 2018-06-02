@@ -15,7 +15,7 @@ import { StartFRComponent } from './components/start-fr/start-fr.component';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'startFR', component:StartFRComponent}
+  {path: 'startFR', component: StartFRComponent}
 ];
 
 @NgModule({
