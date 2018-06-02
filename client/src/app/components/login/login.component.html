@@ -12,14 +12,14 @@
         </div>
         <div class="card-content blue lighten-5">
             <div id="test1" style="display: block" class="active">
-                <form id="form1" action="" method="POST">
+                <form (submit)="login(username.value, password.value)" method="POST">
                     <p>
-                        Email:
-                        <input data-validation="url" id="email" name="website">
+                        Username:
+                        <input data-validation="url" id="username" name="username" #username>
                     </p>
                     <p>
                         Password:
-                        <input type="password" data-validation="url" id="password" name="password">
+                        <input type="password" data-validation="url" id="password" name="password" #password>
                     </p>
                     <input type="submit" class="btn-large waves-light blue"><br>
                     <p><a href="#">Create Account</a></p>

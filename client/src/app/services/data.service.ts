@@ -14,6 +14,9 @@ export class DataService {
 
   getIdeas() {
     return this.http.get('http://100.96.247.217:8081/Ideas').pipe(map(res => res.json()));
+  }
 
+  postLogin(username: string, password: string) {
+    return this.http.post('http://100.96.247.217:8081/Login', username, password).pipe(map(res => res.json()));
   }
 }

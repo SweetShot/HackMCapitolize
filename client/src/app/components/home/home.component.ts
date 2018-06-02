@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getIdeas().subscribe((Ideas) => {
-      console.log(Ideas);
       this.Ideas = Ideas;
     });
   }
