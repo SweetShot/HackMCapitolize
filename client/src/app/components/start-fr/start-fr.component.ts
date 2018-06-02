@@ -1,5 +1,8 @@
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-start-fr',
@@ -7,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-fr.component.css']
 })
 export class StartFRComponent implements OnInit {
-  constructor(private dataService: DataService ) { }
-
-  ngOnInit() {
+  constructor(private dataService: DataService, private router: Router ) {
     if ((this.dataService.auth) !== '') {
       console.log('Login Failed');
+      this.router.navigate(['/login']);
     } else {
       console.log('Logged in');
     }
+  }
+
+  ngOnInit() {
   }
 }
