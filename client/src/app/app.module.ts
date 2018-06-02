@@ -11,6 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { StartFRComponent } from './components/start-fr/start-fr.component';
+import { ContributeAmountComponent } from './components/contribute-amount/contribute-amount.component';
+import { ContributeComponent } from './components/contribute/contribute.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,7 +28,10 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    StartFRComponent
+    StartFRComponent,
+    ContributeAmountComponent,
+    ContributeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
