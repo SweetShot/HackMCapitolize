@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, HttpModule, Response } from '@angular/http';
 // Add the RxJS Observable operators we need in this app.
-import { map } from 'rxjs/operators';
+import { Observable, Subject, asapScheduler, pipe, of, from, interval, merge, fromEvent } from 'rxjs';
+import { map, filter, scan } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -12,6 +13,7 @@ export class DataService {
   constructor(public http: Http) { }
 
   getIdeas() {
-    return this.http.get('100.96.247.217:8081/Ideas').map(res => res.json());
+    return this.http.get('http://100.96.247.217:8081/Ideas').pipe(map(res => res.json()));
+
   }
 }
