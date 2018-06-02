@@ -76,7 +76,7 @@ func (r Repository) GetIdeasByUsername(Username string) Ideas {
 	c := session.DB(DBNAME).C(IdeaCollection)
 	results := Ideas{}
 
-	if err := c.Find(bson.M{"username": Username}).One(&results); err != nil {
+	if err := c.Find(bson.M{"username": Username}).All(&results); err != nil {
 		fmt.Println("Failed to write result:", err)
 	}
 
@@ -133,15 +133,19 @@ func (r Repository) UpdateIdea(idea Idea) bool {
 	session, err := mgo.Dial(SERVER)
 	defer session.Close()
 
+	log.Println("Updating Idea : ", idea.Username, idea.DatePosted)
 	err = session.DB(DBNAME).C(IdeaCollection).Update(
-		bson.M{"username": idea.Username, "date_posted": idea.DatePosted}, idea)
+		bson.M{"$and": []bson.M{
+			{"username": idea.Username},
+			{"date_posted": idea.DatePosted},
+		}}, idea)
 
 	if err != nil {
 		log.Fatal(err)
 		return false
 	}
 
-	fmt.Println("Updated Idea - ", idea.Username, idea.DatePosted)
+	log.Println("Updated Idea - ", idea.Username, idea.DatePosted)
 
 	return true
 }

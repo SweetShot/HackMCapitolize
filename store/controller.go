@@ -34,14 +34,16 @@ func AuthenticationMiddleware(next http.HandlerFunc) http.HandlerFunc {
 		if authorizationHeader != "" {
 			bearerToken := strings.Split(authorizationHeader, " ")
 			if len(bearerToken) == 2 {
-				token, error := jwt.Parse(bearerToken[1], func(token *jwt.Token) (interface{}, error) {
+
+				token, err := jwt.ParseWithClaims(bearerToken[1], &MyClaims{}, func(token *jwt.Token) (interface{}, error) {
 					if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 						return nil, fmt.Errorf("There was an error")
 					}
 					return []byte(SECRET), nil
 				})
-				if error != nil {
-					json.NewEncoder(w).Encode(Exception{Message: error.Error()})
+
+				if err != nil {
+					json.NewEncoder(w).Encode(Exception{Message: err.Error()})
 					return
 				}
 				if token.Valid {
@@ -74,7 +76,7 @@ func (c *Controller) Login(w http.ResponseWriter, req *http.Request) {
 	claims := MyClaims{
 		user.Username,
 		jwt.StandardClaims{
-			ExpiresAt: time.Now().Add(time.Hour).Unix(),
+			ExpiresAt: time.Now().Add(time.Hour * 100).Unix(),
 			Issuer:    "test",
 		},
 	}
@@ -105,7 +107,7 @@ func (c *Controller) GetIdeas(w http.ResponseWriter, r *http.Request) {
 // SearchIdea GET /Ideas/Search/{query}
 func (c *Controller) GetIdeasByString(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	log.Println(vars)
+	//log.Println(vars)
 
 	query := vars["query"] // param query
 	log.Println("Search Query - " + query)
@@ -123,10 +125,10 @@ func (c *Controller) GetIdeasByString(w http.ResponseWriter, r *http.Request) {
 // /Idea/User/{name}
 func (c *Controller) GetIdeasByUsername(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	log.Println(vars)
+	//log.Println(vars)
 
 	username := vars["name"] // param id
-	log.Println(username)
+	//log.Println(username)
 
 	ideas := c.Repository.GetIdeasByUsername(username)
 	data, _ := json.Marshal(ideas)
@@ -163,6 +165,7 @@ func (c *Controller) AddIdea(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
+		return
 	}
 
 	// Update Idea fields
