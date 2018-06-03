@@ -12,7 +12,7 @@
         </div>
         <div class="card-content blue lighten-5">
             <div id="test1" style="display: block" class="active">
-                <form (submit)="login(username.value, password.value)" method="POST">
+                <form (submit)="login(username.value, password.value)">
                     <p>
                         Username:
                         <input data-validation="url" id="username" name="username" #username>
@@ -21,7 +21,7 @@
                         Password:
                         <input type="password" data-validation="url" id="password" name="password" #password>
                     </p>
-                    <input routerLink="/dashboard" type="submit" class="btn-large waves-light blue"><br>
+                    <input type="submit" class="btn-large waves-light blue"><br>
                     <p><a href="#">Create Account</a></p>
                     <p><a href="#">Forgot Password</a></p>
                 </form>

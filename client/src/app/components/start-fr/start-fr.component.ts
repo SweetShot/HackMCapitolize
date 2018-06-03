@@ -11,12 +11,6 @@ import { LoginComponent } from '../login/login.component';
 })
 export class StartFRComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router ) {
-    if ((this.dataService.auth) !== '') {
-      console.log('Login Failed');
-      this.router.navigate(['/login']);
-    } else {
-      console.log('Logged in');
-    }
   }
 
   ngOnInit() {
