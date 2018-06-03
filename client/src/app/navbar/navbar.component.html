@@ -1,6 +1,8 @@
 <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo"><img class="capitolize" src="..\..\assets\images\Capitolize.png" alt="Capitolize"></a>
+        <div id="google_translate_element"></div>
+
         <ul class="right hide-on-med-and-down">
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/login" class="btn-large waves-effect waves-light red" id="loginbutton" *ngIf="dataService.auth === ''">Login</a></li>

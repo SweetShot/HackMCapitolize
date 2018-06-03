@@ -15,7 +15,9 @@ import { HttpHeaders } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   loginStatus: string;
   token: string;
-  constructor(private dataService: DataService, private router: Router ) { }
+
+  constructor(private dataService: DataService, private router: Router ) {
+  }
 
   ngOnInit() {
   }
