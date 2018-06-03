@@ -17,99 +17,65 @@
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Health</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Health</del></span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Women Empowerment</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Women Empowerment</del></span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Energy</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Energy</del></span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Local Retail</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Local Retail</del></span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Handicraft</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Handicraft</del></span>
                     </label>
                 </p>
                 <p>
                     <label>
-                      <input type="checkbox" name="category" value="" disabled="disabled" />
-                      <span>Miscellaneous</span>
+                      <input id="indeterminate-checkbox" type="checkbox" name="category" value="" />
+                      <span><del>Miscellaneous</del></span>
                     </label>
                 </p>
                 <button onclick="" class="btn-large waves-effect blue">Apply filter</button>
             </form>
         </div>
-        <div class="col-lg-9 col-sm-8">
-            <table class="responsive-table">
-                <tr>
-                    <td *ngFor="let Idea of Ideas; let i=index">
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\Capitolize.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">{{Idea.username}}</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">close</i></span>
-                                <p>
-                                    {{Idea.summary}}<br> {{Idea.date_posted}}
-                                    <br> {{Idea.date_end}}
-                                    <br> {{Idea.num_contributors}}
-                                    <br> {{Idea.category}}
-                                    <br>
-                                </p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\logo-1.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="..\..\..\assets\images\logo-4.png">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">This is a link</a></p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        <div class="col-lg-9 col-sm-8 container">
+            <div class="row">
+                <div class="card col-lg-4 col-sm-6" *ngFor="let Idea of Ideas; let i=index">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="..\..\..\assets\images\Capitolize.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">{{Idea.username}}</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{Idea.title}}<i class="material-icons right">close</i></span>
+                        <p>
+                            {{Idea.summary}}<br> {{Idea.date_posted}}
+                            <br> {{Idea.date_end}}
+                            <br> {{Idea.num_contributors}}
+                            <br> {{Idea.category}}
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

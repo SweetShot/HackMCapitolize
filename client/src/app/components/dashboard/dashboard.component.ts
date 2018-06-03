@@ -1,20 +1,15 @@
-import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class HomeComponent implements OnInit {
-  Ideas: Idea[];
+export class DashboardComponent implements OnInit {
 
-  constructor(private dataService: DataService ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.dataService.getIdeas().subscribe((Ideas) => {
-      this.Ideas = Ideas;
-    });
   }
 
 }

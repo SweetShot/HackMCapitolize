@@ -1,0 +1,38 @@
+.container {
+    height: 100%;
+    padding-top: 1%;
+}
+
+.sidenav {
+    /*height: auto;*/
+    max-height: 51.75%;
+    position: absolute;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding-left: 2%;
+}
+
+.btn-large {
+    margin: 1%;
+}
+
+#funds {
+    width: 50%;
+    margin: 5%;
+    margin-left: 50%;
+    margin-bottom: 3%;
+    float: left;
+    padding-left: 10%;
+    text-align: center;
+}
+
+#contribute {
+    padding-left: 10%;
+    width: 50%;
+    float: left;
+    margin: 5%;
+    margin-left: 50%;
+    margin-bottom: 3%;
+    text-align: center;
+}

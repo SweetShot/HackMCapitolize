@@ -10,3 +10,9 @@
 .label {
     line-height: 2 !important;
 }
+
+.card {
+    margin: 1% 1%;
+    max-width: 30%;
+    max-height: 30%;
+}

@@ -1,4 +1,9 @@
+import { DataService } from './../services/data.service';
+import { LoginComponent } from './../components/login/login.component';
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +11,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  public isLogin = false;
+  public dataService: DataService;
 
-  constructor() { }
+  constructor(private dataService_: DataService) {
+    this.dataService = dataService_;
+  }
 
   ngOnInit() {
   }

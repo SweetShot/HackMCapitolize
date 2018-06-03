@@ -10,10 +10,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { StartFRComponent } from './components/start-fr/start-fr.component';
+import { ContributeAmountComponent } from './components/contribute-amount/contribute-amount.component';
+import { ContributeComponent } from './components/contribute/contribute.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'startFR', component: StartFRComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'contribute', component: ContributeComponent},
+  {path: 'contribute-amt', component: ContributeAmountComponent}
 ];
 
 @NgModule({
@@ -22,7 +30,11 @@ const appRoutes: Routes = [
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    StartFRComponent,
+    ContributeAmountComponent,
+    ContributeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +42,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
