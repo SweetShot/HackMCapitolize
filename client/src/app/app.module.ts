@@ -19,7 +19,9 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'startFR', component: StartFRComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'contribute', component: ContributeComponent},
+  {path: 'contribute-amt', component: ContributeAmountComponent}
 ];
 
 @NgModule({
