@@ -45,27 +45,40 @@ var routes = Routes{
 		"/Ideas",
 		AuthenticationMiddleware(controller.UpdateIdea),
 	},
-	// Get Product by username {name}
+	// Get Ideas by username {name}
 	Route{
-		"GetProductByUsername",
+		"GetIdeasByUsername",
 		"GET",
 		"/Ideas/User/{name}",
 		controller.GetIdeasByUsername,
 	},
-	// Delete Product by {id}
+	// Delete Idea by {id}
 	Route{
 		"DeleteProduct",
 		"DELETE",
 		"/Ideas",
 		AuthenticationMiddleware(controller.DeleteIdea),
 	},
-	// Search product with string
+	// Search idea with string
 	Route{
 		"SearchProduct",
 		"GET",
 		"/Ideas/Search/{query}",
 		controller.GetIdeasByString,
-	}}
+	},
+	Route{
+		"AddTransaction",
+		"POST",
+		"/Transactions",
+		AuthenticationMiddleware(controller.AddTransaction),
+	},
+	Route{
+		"Transactions",
+		"GET",
+		"/Transactions",
+		controller.GetAllTransactions,
+	},
+}
 
 // NewRouter configures a new router to the API
 func NewRouter() *mux.Router {
@@ -74,7 +87,6 @@ func NewRouter() *mux.Router {
 		var handler http.Handler
 		log.Println(route.Name)
 		handler = route.HandlerFunc
-
 		router.
 			Methods(route.Method).
 			Path(route.Pattern).

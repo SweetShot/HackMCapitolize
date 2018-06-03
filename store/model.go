@@ -49,3 +49,13 @@ type Idea struct {
 }
 
 type Ideas []Idea
+
+type Transaction struct {
+	IdeaId string `json:"idea_id"`
+	DatePosted int64 `json:"date_posted"`
+	Username string `json:"username"`
+	Price int64 `json:"price"`
+	OtherInfo string `json:"other_info"`
+}
+
+type Transactions []Transaction

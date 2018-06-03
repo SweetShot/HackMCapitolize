@@ -113,6 +113,30 @@ func (r Repository) GetIdeasByString(query string) Ideas {
 	return result
 }
 
+// GetIdea
+func (r Repository) GetUniqueIdea(username string, date_posted int64) Idea {
+	session, err := mgo.Dial(SERVER)
+	defer session.Close()
+
+	idea := Idea{}
+	log.Println("Getting unique Idea : ", username, date_posted)
+	err = session.DB(DBNAME).C(IdeaCollection).Find(
+		bson.M{"$and": []bson.M{
+			{"username": username},
+			{"date_posted": date_posted},
+		}}).One(&idea)
+
+	if err != nil {
+		log.Fatal(err)
+		return Idea{Title : "Error"}
+	}
+
+	log.Println("Retrieved Idea - ", idea.Username, idea.DatePosted)
+
+	return idea
+}
+
+
 // AddIdea adds an Idea in the DB
 func (r Repository) AddIdea(idea Idea) bool {
 	session, err := mgo.Dial(SERVER)
