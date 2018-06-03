@@ -2,30 +2,30 @@
     <h4>
         <br>Start a Fundraiser</h4>
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" (submit)="newIdea(Idea)">
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_title" type="text" class="validate">
+                    <input id="icon_title" type="text" class="validate" [(ngModel)]="Idea.title" name="title">
                     <label for="icon_title">Title</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">phone</i>
-                    <input id="icon_description" type="text" class="validate">
+                    <input id="icon_description" type="text" class="validate" [(ngModel)]="Idea.description" name="description">
                     <label for="icon_description">Description</label>
                 </div>
                 <div class="input-field col s4">
                     <i class="material-icons prefix">phone</i>
-                    <input id="icon_beneficiary" type="text" class="validate">
+                    <input id="icon_beneficiary" type="text" class="validate" [(ngModel)]="Idea.beneficiary" name="beneficiary">
                     <label for="icon_beneficiary">Beneficiary</label>
                 </div>
             </div>
             <div class="row">
                 <div class="file-field input-field col s4">
                     <i class="material-icons prefix">add_a_photo</i>
-                    <input type="file">
+                    <input type="file" [(ngModel)]="Idea.image" name="image">
                     <div class="file-path-wrapper">
                         <input class="file-path validate">
                     </div>
@@ -35,12 +35,12 @@
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">money</i>
-                    <input id="icon_money" type="number" class="validate">
+                    <input id="icon_money" type="number" class="validate" [(ngModel)]="Idea.total_funds_required" name="total_funds_required">
                     <label for="icon_money">Amount to raised</label>
                 </div>
                 <div class="input-field col s4">
                     <i class="material-icons prefix">phone</i>
-                    <input id="icon_your_contribution" type="number" class="validate">
+                    <input id="icon_your_contribution" type="number" class="validate" [(ngModel)]="Idea.total_funds_raised" name="total_funds_raised">
                     <label for="icon_your_contribution">Your Contribution</label>
                 </div>
             </div>
@@ -52,37 +52,37 @@
                     <div class="row">
                         <div class="col s4">
                             <label>
-                              <input type="radio" name="group1">
+                              <input type="radio" name="Farming">
                               <span>Farming</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" />
+                              <input type="radio" name="Teaching" />
                               <span>Teaching</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" />
+                              <input type="radio" name="Health" />
                               <span>Health</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" />
+                              <input type="radio" name="Women_Empowerment" />
                               <span>Women Empowerment</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" />
+                              <input type="radio" name="Handicraft" />
                               <span>Handicraft</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" />
+                              <input type="radio" name="Energy" />
                               <span>Energy</span>
                             </label>
 
                             <label>
-                              <input type="radio" name="group1" checked/>
+                              <input type="radio" name="Local_retail" checked/>
                               <span>Local Retail</span>
                             </label>
                         </div>

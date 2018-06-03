@@ -12,7 +12,7 @@
         </div>
         <div class="card-content blue lighten-5">
             <div id="test1" style="display: block" class="active">
-                <form (submit)="login(username.value, password.value)">
+                <form class="loginForm" enctype='application/json' (submit)="login(username.value, password.value)">
                     <p>
                         Username:
                         <input data-validation="url" id="username" name="username" #username>

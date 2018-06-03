@@ -16,15 +16,18 @@ export class DataService {
   }
 
   getIdeas() {
-    return this.http.get('http://192.168.43.128:8081/Ideas').pipe(map(res => res.json()));
+    return this.http.get('http://192.168.1.106:8081/Ideas').pipe(map(res => res.json()));
   }
 
-  postLogin(username: string, password: string) {
-    return this.http.post('http://192.168.43.128:8081/Login', username, password).pipe(map(res => res.json()));
+  postLogin(username1: string, password1: string) {
+    return this.http.post('http://192.168.1.106:8081/Login', {
+      username: 'username1',
+      password: 'password1'
+    }).pipe(map(res => res.json()));
   }
 
   postIdeas(newIdea: Idea) {
-    return this.http.post('http://192.168.43.128:8081/Ideas', newIdea).pipe(map(res => res.json()));
+    return this.http.post('http://192.168.1.106:8081/Ideas', newIdea).pipe(map(res => res.json()));
   }
 }
 
